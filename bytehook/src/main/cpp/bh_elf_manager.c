@@ -91,7 +91,7 @@ bh_elf_manager_t *bh_elf_manager_create(void) {
 
 int bh_elf_manager_add_ignore(bh_elf_manager_t *self, const char *caller_path_name) {
   bh_elf_manager_block_t *block;
-  if (NULL == (block = calloc(1, sizeof(bh_elf_t)))) return -1;
+  if (NULL == (block = calloc(1, sizeof(bh_elf_manager_block_t)))) return -1;
   if (NULL == (block->caller_path_name = strdup(caller_path_name))) {
     free(block);
     return -1;
